@@ -187,9 +187,10 @@ function App() {
               Calculate
             </button>
           </form>
-          <p className="text-center font-medium text-red-400 text-sm">
+          <p className="text-center font-medium text-red-400 text-xs">
             <sup className="mr-1">*</sup>This calculator does not currently
-            account for any taxable benefits
+            account for any taxable benefits. Please consult a tax professional
+            for accurate assessments
           </p>
           {results?.length > 0 && (
             <p className="text-center font-medium text-gray-400 lg:w-2/3 mx-auto">
@@ -222,7 +223,7 @@ function App() {
                     <summary className=" group-open:text-green-500 list-none">
                       <div className="flex items-center justify-between hover:bg-blue-100 p-2">
                         <div>
-                          PAYE:{" "}
+                          PAYE{" "}
                           <span className="text-blue-400 text-sm group-open:hidden mr-4 cursor-pointer">
                             Show calculations
                           </span>
@@ -293,7 +294,7 @@ function App() {
                   </details>
 
                   <div className="flex items-center justify-between hover:bg-blue-100 p-2">
-                    <div>NIS:</div>
+                    <div>NIS</div>
                     <div>{formatCurrency(result.monthlyNIS)}</div>
                   </div>
                   <div className="flex items-center justify-between hover:bg-blue-100 p-2">
@@ -358,7 +359,7 @@ function App() {
       </Transition>
       <div className="flex items-center justify-between border-t border-gray-200 p-3">
         <p className="text-sm text-center text-gray-600">
-          &copy; {new Date().getFullYear()} by{" "}
+          &copy; {new Date().getFullYear()} for fun by{" "}
           <a href="https://shannonclarke.com" target="_blank" rel="noreferrer">
             Shannon Clarke
           </a>
