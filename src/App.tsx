@@ -187,6 +187,10 @@ function App() {
               Calculate
             </button>
           </form>
+          <p className="text-center font-medium text-red-400 text-sm">
+            <sup className="mr-1">*</sup>This calculator does not currently
+            account for any taxable benefits
+          </p>
           {results?.length > 0 && (
             <p className="text-center font-medium text-gray-400 lg:w-2/3 mx-auto">
               Your previous assessments are listed below
