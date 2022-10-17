@@ -128,9 +128,9 @@ function App() {
 
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-full md:w-1/2 flex flex-col md:flex-row items-start gap-4"
+            className="w-full md:w-3/5 lg:w-1/2 flex flex-col md:flex-row items-start gap-4"
           >
-            <label className="w-full flex-1">
+            <label className="w-full flex-1 mb-5">
               <span className="text-sm font-medium text-gray-600">
                 Annual Gross Salary
               </span>
@@ -155,11 +155,11 @@ function App() {
                 errors={errors}
                 name="salary"
                 render={({ message }) => (
-                  <p className="text-sm text-red-500">{message}</p>
+                  <p className="text-sm text-red-500 absolute">{message}</p>
                 )}
               />
             </label>
-            <label className="w-full flex-1">
+            <label className="w-full flex-1 mb-5">
               <span className="text-sm font-medium text-gray-600">
                 Employment Status
               </span>
@@ -175,7 +175,7 @@ function App() {
                 errors={errors}
                 name="employmentType"
                 render={({ message }) => (
-                  <p className="text-sm text-red-500">{message}</p>
+                  <p className="text-sm text-red-500 absolute">{message}</p>
                 )}
               />
             </label>
@@ -219,8 +219,8 @@ function App() {
                     <span className="text-blue-500 text-xl">monthly</span>{" "}
                     basis:
                   </p>
-                  <details>
-                    <summary className=" group-open:text-green-500 list-none">
+                  <details className="group">
+                    <summary className="group-open:text-green-500 list-none">
                       <div className="flex items-center justify-between hover:bg-blue-100 p-2">
                         <div>
                           PAYE{" "}
