@@ -5,6 +5,7 @@ This is a pet project made for educational purposes
 ### Roadmap
 
 - [x] Calculate NIS and PAYE obligations
+- [ ] Integrate eslint and prettier config
 - [ ] Refactor UI/UX components
 - [ ] Add component tests (using react-testing-library)
 - [ ] Include additional benefits to claim against taxes
