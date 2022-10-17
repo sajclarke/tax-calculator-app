@@ -211,7 +211,8 @@ function App() {
                   <p className="md:text-sm py-3 text-center font-medium border-b border-gray-200 mb-3">
                     For a monthly gross salary of{" "}
                     <span className="text-blue-500 text-xl">
-                      {formatCurrency(result.salary)} ({result.type})
+                      {formatCurrency(Number(result.salary) / 12)} (
+                      {result.type})
                     </span>
                     , you will pay the following on a{" "}
                     <span className="text-blue-500 text-xl">monthly</span>{" "}
