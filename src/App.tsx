@@ -42,6 +42,8 @@ function App() {
   const taxLimit2 = 50000;
   const taxLimit3 = 0;
 
+  const NISTaxLimit = 5120; //This was increased from 4880 on 1st January 2023
+
   const taxRate1 = 0;
   const taxRate2 = 0.125;
   const taxRate3 = 0.285;
@@ -79,8 +81,8 @@ function App() {
     const PAYEpayment = totalDeduction / 12;
 
     const NISpayment =
-      Number(annualGrossSalary) / 12 > 4880
-        ? NIStaxRate * 4880
+      Number(annualGrossSalary) / 12 > NISTaxLimit
+        ? NIStaxRate * NISTaxLimit
         : NIStaxRate * (Number(annualGrossSalary) / 12);
 
     const results: any = {
@@ -224,10 +226,10 @@ function App() {
                       <div className="flex items-center justify-between hover:bg-blue-100 p-2">
                         <div>
                           PAYE{" "}
-                          <span className="text-blue-400 text-sm group-open:hidden mr-4 cursor-pointer">
+                          <span className="text-blue-400 text-sm group-open:hidden mr-4 cursor-pointer hover:underline">
                             Show calculations
                           </span>
-                          <span className="text-blue-400 text-sm hidden group-open:inline mr-4 cursor-pointer">
+                          <span className="text-blue-400 text-sm hidden group-open:inline mr-4 cursor-pointer hover:underline">
                             Hide calculations
                           </span>
                         </div>
@@ -294,7 +296,20 @@ function App() {
                   </details>
 
                   <div className="flex items-center justify-between hover:bg-blue-100 p-2">
-                    <div>NIS</div>
+                    <div>
+                      NIS{" "}
+                      <span className="text-sm">
+                        (see{" "}
+                        <a
+                          target="_blank"
+                          className="cursor-pointer hover:underline text-blue-500"
+                          href="https://www.nis.gov.bb/notice-earnings-ceiling-contribution-rates-2023/"
+                        >
+                          NIS rates 2023
+                        </a>
+                        )
+                      </span>
+                    </div>
                     <div>{formatCurrency(result.monthlyNIS)}</div>
                   </div>
                   <div className="flex items-center justify-between hover:bg-blue-100 p-2">
