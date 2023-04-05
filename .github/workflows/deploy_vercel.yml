@@ -1,0 +1,18 @@
+# Workflow to deploy develop branch
+
+name: 
+  Deploy develop branch
+on:
+ schedule:
+   # Runs at midnight every weekday
+   - cron: "0 0 * * 1-5"
+ # Allows you to run this workflow manually from the Actions tab
+ workflow_dispatch:
+
+# The workflow to run
+jobs:
+ build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build hook request
+        run: curl -X POST -d {} https://api.vercel.com/v1/integrations/deploy/prj_zEpQmBdA0c30NV7enSb2ebhvce8J/mjupcfyK6H
